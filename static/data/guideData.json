@@ -1,0 +1,21 @@
+{
+	"guidePage": [
+		{
+			"id": "1",
+			"name": "one",
+			"imgurl": "http://ostbgqqwd.bkt.clouddn.com/guide_1.jpg"
+		}, {
+			"id": "2",
+			"name": "two",
+			"imgurl": "http://ostbgqqwd.bkt.clouddn.com/guide_2.jpg"
+		}, {
+			"id": "3",
+			"name": "three",
+			"imgurl": "http://ostbgqqwd.bkt.clouddn.com/guide_3.jpg"
+		}, {
+			"id": "4",
+			"name": "four",
+			"imgurl": "http://ostbgqqwd.bkt.clouddn.com/guide_4.jpg"
+		}
+	]
+}

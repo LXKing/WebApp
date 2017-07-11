@@ -1,6 +1,6 @@
-# webapp
+# thepalestink
 
-> vuewepapp
+> A Vue.js project
 
 ## Build Setup
 

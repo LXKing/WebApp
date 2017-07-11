@@ -1,19 +1,18 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import store from './store'
-import GuidePage from './components/guidePage'
+import store from './store/index.js'
+import './assets/lib/flexible.js'
+import './assets/lib/Chart'
 import axios from 'axios'
 import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
-
 import { Indicator, Toast } from 'mint-ui';
 
-Vue.use(GuidePage);
+/**使用vux的插件提示功能*/
+import  { ToastPlugin } from 'vux';
+Vue.use(ToastPlugin);
 Vue.use(Mint);
-
 
 Vue.config.productionTip = false
 
@@ -38,16 +37,12 @@ axios.interceptors.response.use(function(response){
 
 Vue.prototype.$http = axios;
 
-require('../static/css/swiper.min.css');
-require('../static/js/jquery.min.js');
-require('../static/js/swiper.min.js');
 
-/* eslint-disable no-new */
 new Vue({
-  el: '#app',
-  router,
-  	store,
-template: '<App/>',
-components: { App }
-  	//render: h => h(App)
+    el: '#app',
+    router,
+    store,
+    template: '<App/>',
+    components: { App }
+      	//render: h => h(App)
 })
