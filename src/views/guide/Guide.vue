@@ -2,20 +2,6 @@
 	<!--引导页面-->
 	<div class="guide-wrap">
 		<!--引导页-->
-		<!--<div class="guide-item"
-             v-for="( guide_item , guide_index) in guide_arr"
-             :style="{ backgroundImage: 'url(' + guide_item.img_url + ')' }"
-             :class="{'guide-item-active': guide_active_index > guide_index}">
-            <span @click="jumpGuide()" class="guide-go" v-if=" (guide_arr.length - 1) == guide_index">开启浪笔头之旅</span>
-        </div>-->
-		<!--<div class="guide-item" 
-			v-for="( guide_item , guide_index) in guide_arr" 
-			<!--:style="{ backgroundImage: 'url(' + guide_item.imgurl + ')' }" --
-			:class="{'guide-item-active': guide_active_index > guide_index}">
-			<!--             <img v-bind:src="guide_item.imgurl" />--
-
-			<span @click="jumpGuide()" class="guide-go" v-if=" (guide_arr.length - 1) == guide_index">开启浪笔头之旅</span>
-		</div>-->
 		<div class="guide-item" v-for="( guide_item , guide_index) in guide_arr" :class="{'guide-item-active': guide_active_index > guide_index}">
 
 			<img v-bind:src="guide_item.imgurl" />
@@ -38,7 +24,7 @@
 	<!--/引导页面-->
 </template>
 <script>
-	import { Indicator, Toast } from 'mint-ui';
+//	import { Indicator, Toast } from 'mint-ui';
 	import GestureMobile from '../../assets/lib/GestureMobile'
 	import Tool from '../../assets/lib/Tool'
 	import types from '../../store/mutation-types'
@@ -101,6 +87,9 @@
 					Toast('获取失败！');
 				})
 			}
+		},
+		mounted: function(){
+			
 		}
 	}
 </script>

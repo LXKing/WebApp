@@ -1,6 +1,12 @@
 <template>
     <div class="consumption-wrap">
-        <head-title :title="'消费：'"></head-title>
+    			<mt-header title="消费">
+		  <router-link to="/" slot="left">
+		    <mt-button icon="back">返回</mt-button>
+		  </router-link>
+		  <mt-button icon="more" slot="right"></mt-button>
+		</mt-header>
+<!--        <head-title :title="'消费'"></head-title>-->
         <ul class="input-warp">
             <li class="input-item input-required">
                 <calendar v-model="date_value" title="日期：" disable-future></calendar>
@@ -33,7 +39,7 @@
 </template>
 <script>
     import { PopupPicker, Datetime, Calendar, XInput } from 'vux'
-    import headTitle from '../../../components/head-title.vue'
+    //import headTitle from '../../../components/head-title.vue'
     import Tool from '../../../assets/lib/Tool'
     import Util from '../../../assets/lib/Util'
     import types from '../../../store/mutation-types'
@@ -50,7 +56,7 @@
             Datetime,
             XInput,
             PopupPicker,
-            headTitle
+            //headTitle
         },
         data () {
             return {

@@ -32,7 +32,7 @@ const router = new Router({
 		},
 		/**首页*/
 		{
-			path: '/',
+			path: '/home',
 			name: 'home',
 			component: Home,
 			meta: {
@@ -48,7 +48,7 @@ const router = new Router({
 				status: 2
 			},
 			children: [{
-					path: '',
+					path: '/account/account_index',
 					name: 'account_index',
 					component: AccountIndex,
 					meta: {
@@ -56,7 +56,7 @@ const router = new Router({
 					}
 				},
 				{
-					path: 'consumption',
+					path: '/account/consumption',
 					name: 'consumption',
 					component: Consumption,
 					meta: {
@@ -64,11 +64,11 @@ const router = new Router({
 					}
 				},
 				{
-					path: 'earn',
+					path: '/account/earn',
 					name: 'earn',
 					component: Earn,
 					meta: {
-						status: 4
+						status: 5
 					}
 				}
 			]
@@ -79,7 +79,7 @@ const router = new Router({
 			name: 'bill',
 			component: Bill,
 			meta: {
-				status: 5
+				status: 6
 			}
 		},
 		/**分析页面*/
@@ -88,8 +88,18 @@ const router = new Router({
 			name: 'chart',
 			component: Chart,
 			meta: {
-				status: 6
+				status: 7
 			}
+		},
+		/**默认跳转页面*/
+		{
+			path: '/',
+			redirect: '/guide'
+		},
+		/**错误页面*/
+		{
+			path: '*',
+			redirect: '/error'
 		}
 	]
 });
@@ -106,7 +116,7 @@ router.beforeEach((to, from, next) => {
 	}
 	let is_not_first = Tool.dataToLocalStorageOperate.achieve('is_not_first');
 	if(!is_not_first && to.path != '/guide') next('/guide');
-	else if(is_not_first && to.path == '/guide') next('/');
+	else if(is_not_first && to.path == '/guide') next('/home');
 	else next();
 });
 

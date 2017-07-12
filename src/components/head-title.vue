@@ -1,18 +1,29 @@
 <template>
-    <h1 class="header-title" v-text="title"></h1>
+	<!--<x-header :left-options="{backText: ''}">{{title}}</x-header>
+	<x-header :left-options="{showBack: false}">{{title}}</x-header>-->
+	<mt-header fixed title="固定在顶部"></mt-header>
+
+	<!--<mt-header title="标题过长会隐藏后面的内容啊哈哈哈哈">
+  <router-link to="/" slot="left">
+    <mt-button icon="back">返回</mt-button>
+  </router-link>
+  <mt-button icon="more" slot="right"></mt-button>
+</mt-header>-->
+
 </template>
 <script>
-    export default {
-        name: 'header-title',
-        props: ['title']
-    }
+	//import { XHeader, Actionsheet, TransferDom, ButtonTab, ButtonTabItem } from 'vux'
+	export default {
+		name: 'header-title',
+		props: ['title', 'bcolor'],
+		components: {
+//			XHeader,
+//			Actionsheet,
+//			ButtonTab,
+//			ButtonTabItem
+		}
+	}
 </script>
-<style lang="scss">
-    @import "../assets/scss/define";
-    .header-title{
-        @extend %f18;
-        @extend %fwn;
-        padding: 20px;
-        color: #1D8CE0;
-    }
+<style>
+
 </style>

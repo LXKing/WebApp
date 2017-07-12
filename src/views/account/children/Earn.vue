@@ -1,6 +1,6 @@
 <template>
     <div class="earn-wrap">
-        <head-title :title="'入账：'"></head-title>
+        <head-title :title="'入账'"></head-title>
         <ul class="input-warp">
             <li class="input-item input-required">
                 <calendar v-model="date_value" title="日期：" disable-future></calendar>

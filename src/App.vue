@@ -16,7 +16,7 @@
                 </svg>
                 <span slot="label">首页</span>
             </tabbar-item>
-            <tabbar-item :selected="navIndex == 2" link="/account">
+            <tabbar-item :selected="navIndex == 2" link="/account/account_index">
                 <svg slot="icon" class="nav-item nav-account-item">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#nav-account"></use>
                 </svg>

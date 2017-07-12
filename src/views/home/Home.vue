@@ -10,8 +10,8 @@
                 <h1 class="balance-total" id="total_balance"></h1>
             </div>
             <div class="home-btn-wrap">
-                <a href="#/account/consumption" class="go-account go-consumption">消费</a>
-                <a href="#/account/earn" class="go-account go-earn">入账</a>
+                <a href="/account/consumption" class="go-account go-consumption">消费</a>
+                <a href="/account/earn" class="go-account go-earn">入账</a>
                 <!--<span class="home-btn-item">本月可用余额</span>-->
                 <!--<span class="home-btn-item">实施计划经济</span>-->
             </div>

@@ -5,21 +5,26 @@ import store from './store/index.js'
 import './assets/lib/flexible.js'
 import './assets/lib/Chart'
 import axios from 'axios'
-import Mint from 'mint-ui';
-import 'mint-ui/lib/style.css';
-import { Indicator, Toast } from 'mint-ui';
+//import Mint from 'mint-ui';
+//import 'mint-ui/lib/style.css';
+//import { Indicator, Toast } from 'mint-ui';
 
 /**使用vux的插件提示功能*/
 import  { ToastPlugin } from 'vux';
 Vue.use(ToastPlugin);
-Vue.use(Mint);
+
+
+console.log(ToastPlugin)
+
+
+//Vue.use(Mint);
 
 Vue.config.productionTip = false
 
 //axios配置
 axios.interceptors.request.use(function(request){
 	//showloading
-	Indicator.open('加载中...');
+	//Indicator.open('加载中...');
 	return request;
 }, function(error){
 	return Promise.reject(error);
@@ -27,7 +32,7 @@ axios.interceptors.request.use(function(request){
 
 axios.interceptors.response.use(function(response){
 	//hideloading
-	Indicator.close();
+	//Indicator.close();
 	return response;
 }, function(error){
 	return Promise.reject(error);
