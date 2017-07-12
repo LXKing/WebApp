@@ -3,7 +3,7 @@
 	<div class="guide-wrap">
 		<!--引导页-->
 		<div class="guide-item" v-for="( guide_item , guide_index) in guide_arr" :class="{'guide-item-active': guide_active_index > guide_index}">
-
+			<!--也可以通过设置背景图片来实现-->
 			<img v-bind:src="guide_item.imgurl" />
 
 			<span @click="jumpGuide()" class="guide-go" v-if=" (guide_arr.length - 1) == guide_index">开启浪笔头之旅</span>
@@ -24,7 +24,7 @@
 	<!--/引导页面-->
 </template>
 <script>
-//	import { Indicator, Toast } from 'mint-ui';
+	import { Indicator, Toast } from 'mint-ui';
 	import GestureMobile from '../../assets/lib/GestureMobile'
 	import Tool from '../../assets/lib/Tool'
 	import types from '../../store/mutation-types'
@@ -64,17 +64,23 @@
 			jumpGuide() {
 				Tool.dataToLocalStorageOperate.save('is_not_first', true);
 				this.$store.commit(types.JUDGE_IS_NOT_FIRST, true);
-				this.$router.push('/')
+				this.$router.push('/home')
 			},
 			/**索引触发*/
 			guideTrigger(guide_index) {
 				this.guide_active_index = guide_index + 1;
 			},
+//			sleep(n) {
+//				var start = new Date().getTime();
+//				while(true)
+//					if(new Date().getTime() - start >= n) break;
+//			},
 			/*获取guide数据*/
 			fetchGuideData() {
 				var _this = this;
 				_this.$http.get('http://ostbiefv1.bkt.clouddn.com/guideData.json').then(function(res) {
 					_this.guide_arr = [];
+					//_this.sleep(10000);
 					//console.log(res.data);
 					for(var i = 0; i < res.data.guidePage.length; i++) {
 						//容错机制-防止api返回null值
@@ -87,9 +93,6 @@
 					Toast('获取失败！');
 				})
 			}
-		},
-		mounted: function(){
-			
 		}
 	}
 </script>
@@ -129,11 +132,10 @@
 		}
 	}
 	
-	
-	.guide-item img{
-    	width: 100%;
-    	height: 100%;
-    }
+	.guide-item img {
+		width: 100%;
+		height: 100%;
+	}
 	
 	.guide-trigger {
 		@extend %pa;
